@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>政务云index2</title>
+
+<!-- Tell the browser to be responsive to screen width -->
+<!-- <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet" href="../resources/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+Font Awesome
+<link rel="stylesheet" href="../resources/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
+Ionicons
+<link rel="stylesheet" href="../resources/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+Theme style
+<link rel="stylesheet" href="../resources/adminlte/dist/css/AdminLTE.css">
+AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+<link rel="stylesheet" href="../resources/adminlte/dist/css/skins/skin-blue.min.css"> -->
+ 
+
+
+
+
+
+  <link rel="stylesheet" href="../resources/common/css2/e.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../resources/common/favicon.ico" media="screen" />
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../resources/adminlte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome --> 
+  <link rel="stylesheet" href="../resources/common/libs/font-awesome/css/font-awesome.min.css">
+
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+
+  <link rel="stylesheet" href="../resources/common/css/base.css">
+ 
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../resources/common/libs/html5shiv/html5shiv.min.js"></script>
+  <script src="../resources/common/libs/respond/respond.min.js"></script>
+  <![endif]-->
+    <!-- table and edit -->
+	<link rel="stylesheet" href="../resources/adminlte/plugins/datatables/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="../resources/adminlte/plugins/datatables/select.bootstrap.min.css">
+	<link rel="stylesheet" href="../resources/adminlte/plugins/bootstrap-validator/dist/css/bootstrap-validator.css"/>
+	<link rel="stylesheet" href="../resources/adminlte/plugins/iCheck/all.css">
+    <!-- daterangepicker -->
+    <!--<link rel="stylesheet" href="../resources/adminlte/plugins/daterangepicker/daterangepicker.css">-->
+	<link rel="stylesheet" href="../resources/adminlte/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="../resources/adminlte/plugins/select2/select2.min.css">
+	<!-- treeview -->
+	<link rel="stylesheet" href="../resources/adminlte/plugins/bootstrap-treeview/bootstrap-treeview.min.css" />
+  <!-- Theme style -->
+    <link rel="stylesheet" href="../resources/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../resources/adminlte/dist/css/skins/_all-skins.css">
+    <!-- bootsrap Table样式 -->
+  <link rel="stylesheet" href="../resources/common/bootstrap-table/bootstrap-table.css" />
+
+
+
+<style type="text/css">
+/**设置顶部登录用户头像悬停*/
+#lal{
+	line-height: 40px;
+	display: none;
+	position:absolute;
+	right:0px;
+	top:50px
+	list-style: none;
+	background:#FFF;
+	width:100px;
+	text-align: center;
+	
+}
+#lal>li{
+	list-style: none;
+	text-align: left;
+}
+#lal>li>a:hover{
+	background:#3c8dbc
+}
+/**设置logo的大小和文字的位置*/	
+.main-header .logo {
+  -webkit-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  display: block;
+  float: left;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  width: 230px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0;
+  font-weight: 300;
+  overflow: hidden;
+  color:black;
+}
+.main-header .logo img{
+	width:150px;
+	
+}
+.main-header .logo .logo-lg b{
+	position:relative;
+	top:6px;
+	font-size: 20px;
+}
+.logo-mini img{
+	padding-left:15px;
+}
+/**将二级菜单缩进显示.*/
+.sidebar-menu .treeview-menu>li>a{
+	padding:5px 5px 5px 35px;
+}
+</style>
+
+
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+
+		<!-- 头部 -->
+
+		<header class="main-header">
+
+			 <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><img src="../resources/adminlte/dist/img/huaweiwhitelogo.png" alt="华为logo"><b>&nbsp;政务云</b></span>
+     <span class="logo-lg"><img src="../resources/adminlte/dist/img/huaweiwhitelogo.png" alt="华为logo"><b>&nbsp;政&nbsp;务&nbsp;云</b></span>
+     
+    </a>
+
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- 切换按钮-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu"
+					role="button"> <!--<span class="sr-only">Toggle navigation</span>-->
+				</a>
+				<!-- Navbar Right Menu -->
+				 <!-- 顶部导航栏 -->
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- 信息下拉框 -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../resources/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../resources/adminlte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        AdminLTE Design Team
+                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../resources/adminlte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Developers
+                        <small><i class="fa fa-clock-o"></i> Today</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../resources/adminlte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Sales Department
+                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../resources/adminlte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Reviewers
+                        <small><i class="fa fa-clock-o"></i> 2 days</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>  
+          
+          
+          
+          
+          <!-- 登录/注销 -->
+          <li class="dropdown user user-menu">
+            <a class="dropdown-toggle">
+              <img src="../resources/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+            </a>
+          </li>
+            
+          <li>
+            <a id="loginAndLogout"><span class="hidden-xs" style="width:100px;">hwx123456</span></a>
+		      <ul id="lal">  
+		        <li><a href="#">登录</a></li>  
+		        <li><a href="#">登出</a></li>  
+		      </ul>  
+          </li>
+        </ul>
+      </div>
+			</nav>
+		</header>
+		
+
+
+
+
+		<!-- 左边栏 -->
+
+		<!-- 左边栏 -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<!-- Sidebar Menu -->
+				<ul class="sidebar-menu" data-widget="tree">
+				
+				
+				
+				</ul>
+				<!-- /.sidebar-menu -->
+			</section>
+			<!-- /.sidebar -->
+		</aside>
+
+
+
+
+
+
+
+
+
+
+		<!-- 内容区 -->
+
+		<div class="content-wrapper" id="mainDiv">
+		<!-- 此处会通过ajax将对应的html页面加载到这里来 -->
+		</div>
+		<!-- Main Footer -->
+		
+		<footer class="main-footer">
+			<!-- To the right -->
+			<div class="pull-right hidden-xs">Anything you want</div>
+			<!-- Default to the left -->
+			<strong>Copyright &copy; 2016 <a href="#">Company</a>.
+			</strong> All rights reserved.
+		</footer>
+		
+		<!-- 右边栏 -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Create the tabs -->
+			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+				<li class="active"><a href="#control-sidebar-home-tab"
+					data-toggle="tab"><i class="fa fa-home"></i></a></li>
+				<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i
+						class="fa fa-gears"></i></a></li>
+			</ul>
+
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<!-- Home tab content -->
+				<div class="tab-pane active" id="control-sidebar-home-tab">
+					<h3 class="control-sidebar-heading">Recent Activity</h3>
+					<ul class="control-sidebar-menu">
+						<li><a href="javascript:;"> <i
+								class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+								<div class="menu-info">
+									<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+									<p>Will be 23 on April 24th</p>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /.control-sidebar-menu -->
+
+					<h3 class="control-sidebar-heading">Tasks Progress</h3>
+					<ul class="control-sidebar-menu">
+						<li><a href="javascript:;">
+								<h4 class="control-sidebar-subheading">
+									Custom Template Design <span class="pull-right-container">
+										<span class="label label-danger pull-right">70%</span>
+									</span>
+								</h4>
+
+								<div class="progress progress-xxs">
+									<div class="progress-bar progress-bar-danger"
+										style="width: 70%"></div>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /.control-sidebar-menu -->
+
+				</div>
+				<!-- /.tab-pane -->
+				<!-- Stats tab content -->
+				<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab
+					Content</div>
+				<!-- /.tab-pane -->
+				<!-- Settings tab content -->
+				<div class="tab-pane" id="control-sidebar-settings-tab">
+					<form method="post">
+						<h3 class="control-sidebar-heading">General Settings</h3>
+
+						<div class="form-group">
+							<label class="control-sidebar-subheading"> Report panel
+								usage <input type="checkbox" class="pull-right" checked>
+							</label>
+
+							<p>Some information about this general settings option</p>
+						</div>
+						<!-- /.form-group -->
+					</form>
+				</div>
+				<!-- /.tab-pane -->
+			</div>
+		</aside>
+		<!-- /.control-sidebar -->
+		<!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+		<div class="control-sidebar-bg"></div>
+		</div>
+	<!-- ./wrapper -->
+	
+	
+<script type="text/javascript">
+	var basePath="..";//给外部js文件传递路径参数
+</script>
+<!-- jQuery 2.2.0 -->
+<script src="../resources/adminlte/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<!--JSON2-->
+<script src="../resources/common/json/json2.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../resources/adminlte/bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../resources/adminlte/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../resources/adminlte/dist/js/app.min.js"></script>
+
+<!-- dataTable -->
+<script src="../resources/adminlte/plugins/datatables/jquery.dataTables.js"></script>
+<script	src="../resources/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../resources/common/js/dataTables.js"></script>
+<!-- 201712228新增 -->
+<script src="../resources/common/bootstrap-table/bootstrap-table.js"></script>
+<script src="../resources/common/bootstrap-table/bootstrap-table-export.js"></script>
+<!-- form -->
+<script src="../resources/adminlte/plugins/bootstrap-validator/dist/js/bootstrap-validator.js"></script>
+<script src="../resources/adminlte/plugins/iCheck/icheck.min.js"></script>
+
+<!--daterangepicker-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="../resources/adminlte/plugins/daterangepicker/daterangepicker.js"></script>-->
+
+<script src="../resources/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="../resources/adminlte/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+<!-- treeview -->
+<script src="../resources/adminlte/plugins/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+		
+<!-- AdminLTE for demo purposes -->
+<script src="../resources/adminlte/dist/js/demo.js"></script>
+<!--select2-->
+<script src="../resources/adminlte/plugins/select2/select2.full.min.js"></script>
+
+<script src="../resources/common/js/base.js"></script>
+<script src="../resources/common/js/base-modal.js"></script>
+<script src="../resources/common/js/base-form.js"></script>
+<script src="../resources/common/js/base-datasource.js"></script>
+<script src="../resources/common/js/base-org.js"></script>
+<script src="../resources/common/js2/leftcolumn.js"></script>
+<script src="../js/bootstrap3-typeahead.min.js"></script>
+<script>
+
+   
+   
+   
+	   
+	   
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   jQuery(function(){ 
+	   //首页默认加载
+       loadPage("../user/rightPage");
+	   //点击左侧菜单栏链接，会动态的加载html页面到#main中
+	   //设置顶部的登录和登出框的显示和隐藏
+	   $("#loginAndLogout").mouseover(function(){
+		   $("#lal").css("display","inline")
+	   })
+	   $("#lal").mouseover(function(){
+		   $("#lal").css("display","inline")
+	   })
+	   $("#lal").mouseout(function(){
+		   $("#lal").css("display","none")
+	   })
+	   $("#loginAndLogout").mouseout(function(){
+		   $("#lal").css("display","none")
+	   })
+   });
+   function loadPage(url, container) {
+	   if (!container)
+	        container = "#mainDiv";
+	   if (!url.startWith(basePath))
+	        url = basePath + url; 
+	    //url:规定要将请求发送到哪个url(必选)
+	    //data：规定连同请求发送到服务器的数据（可选）
+	    //function（response, status, xhr）：请求完成时运行的函数
+	    //response:包含来自请求的数据
+	    //status：包含请求的状态（"success", "notmodified", "error", "timeout" 或 "parsererror"）
+	    //
+	    $(container).load(url, function (response, status, xhr) {
+	        if (status == "success") {
+	            if (response) {
+	                try {
+	                    var result = jQuery.parseJSON(response);
+	                    if (result.code == 100) {
+	                        jQuery(container).html("");
+	                        alert(result.data);
+	                    }
+	                } catch (e) {
+	                    return response;
+	                }
+	            }
+	        }
+	    });
+	}
+   
+   $.ajax({
+	   type:'post',
+	   url:'../menu/list',
+	   success:function(result){
+		    $.each(result,function(index,item){
+				  if(item.menuLevel==1){
+					  $li=$('<li class="treeview"></li>');
+					  var $menu_f=$('<a href="#">\n'+
+							           '<i class="'+item.ico+'"></i> <span>'+item.menuName+'</span>\n'+
+		                             ' <span class="pull-right-container">\n'+
+							           '<i class="fa fa-angle-left pull-right"></i>\n'+
+						            '</span></a>');
+					  $li.append($menu_f);
+					  $menu_f_ul=$('<ul class="treeview-menu" ></ul>');
+					  $li.append($menu_f_ul);
+					  $("ul.sidebar-menu").append($li); 
+				  } 
+				 if(item.menuLevel==2){
+					  $menu_s=$('<li><a href="#" onclick="aClick(event)" data-url="../'+item.url+'"><i class="'+item.ico+'"></i>'+item.menuName+'</a></li>');
+					  $menu_f_ul.append($menu_s);
+				  }
+			  }); 
+	   dataType:'json'
+	   }
+   })
+   
+   function aClick(event){
+	   loadPage($(event.target).attr("data-url"));
+	   //之前选中的菜单栏的那个选项取消被选中，取消高亮
+	   $("ul.treeview-menu li").removeClass("active");
+	   //当前点击的菜单栏的那个选项被选中，会显示高亮
+	   $(this).parent().addClass("active");
+   }
+   
+   
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
